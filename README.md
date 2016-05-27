@@ -47,12 +47,33 @@ $scope.options = {
     disableColumnSelection: true // default false
 };
 ```
+Declare a manual reload function in your controller and assign it to reload attribute on the directive. Optional.
+```
+<!-- in html -->
+<angular-dayparts options="options" reload="reload"></angular-dayparts>
+```
+
+```
+/*in controller*/
+$scope.reload;
+$scope.options.selected = ['monday-14', 'monday-15'];
+
+function changeSelected() {
+    //update selected
+    $scope.options.selected = ['monday-14', 'monday-16']
+    //reload
+    if ($scope.reload) {
+        $scope.reload();
+    }
+}
+
+```
 
 
 Call the directive from your page
 
 ```html
-<angular-dayparts options="options"></angular-dayparts>
+<angular-dayparts options="options" reload="reload"></angular-dayparts>
 ```
 
 

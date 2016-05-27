@@ -3,7 +3,8 @@ angular.module('angular-dayparts', [])
     return {
         restrict: 'E',
         scope: {
-            options: '=?'
+            options: '=?',
+            reload: '='
         },
         templateUrl: 'template.html',
         controller: ['$scope', '$element', '$attrs', function($scope, $element, $attrs) {
@@ -25,6 +26,14 @@ angular.module('angular-dayparts', [])
                 $timeout(function(){
                     repopulate($scope.options.selected);
                 }, 100);
+            }
+
+            /**
+             * Clears all hours and rereads the selected option
+             */
+            $scope.reload = function() {
+              $scope.reset();
+              repopulate();
             }
 
 
