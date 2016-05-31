@@ -35,9 +35,6 @@ angular.module('angular-dayparts', [])
               repopulate();
             }, true);
 
-            console.log($scope.options);
-
-
             /**
              * When user stop clicking make the callback with selected elements
              */
