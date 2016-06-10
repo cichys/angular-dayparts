@@ -44,7 +44,10 @@ $scope.options = {
     disableRowSelection: true, // default false
     
     // When true clicking on the hour it will select the entire columns
-    disableColumnSelection: true // default false
+    disableColumnSelection: true, // default false
+
+    // When true week starts on Monday and ends on Sunday.  When false week starts on Sunday and ends Saturday
+    slavicWeek: false //defaults false
 };
 ```
 
