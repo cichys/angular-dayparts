@@ -39,14 +39,17 @@ $scope.options = {
         console.log('selected: ', selected)
     },
     
-    // Prepopulated cells
+    // Prepopulated cells.  When contents of selected changes the day parts will update correspondingly.
     selected: ['monday-14', 'monday-15'],
     
     // When true clicking on the day name it will select the entire row
     disableRowSelection: true, // default false
     
     // When true clicking on the hour it will select the entire columns
-    disableColumnSelection: true // default false
+    disableColumnSelection: true, // default false
+
+    // When true week starts on Monday and ends on Sunday.  When false week starts on Sunday and ends Saturday
+    slavicWeek: false //defaults false
 };
 ```
 
